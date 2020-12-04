@@ -12,23 +12,23 @@ public class Coin {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long coinid;
 
-	private long   numberofcoins;
-	private long   facevalue;
+	private long   quantity;
+	private long   value;
 	private String name;
-	private String nameall;
+	private String nameplural;
 
 	public Coin() {}
 
 	public Coin(
-			long numberofcoins,
-			long facevalue,
+			long quantity,
+			long value,
 			String name,
-			String nameall
+			String nameplural
 	) {
-		this.numberofcoins = numberofcoins;
-		this.facevalue     = facevalue;
-		this.name          = name;
-		this.nameall       = nameall;
+		this.quantity   = quantity;
+		this.value      = value;
+		this.name       = name;
+		this.nameplural = nameplural;
 	}
 
 	public long getCoinid() {
@@ -39,20 +39,20 @@ public class Coin {
 		this.coinid = coinid;
 	}
 
-	public long getNumberofcoins() {
-		return numberofcoins;
+	public long getQuantity() {
+		return quantity;
 	}
 
-	public void setNumberofcoins(long numberofcoins) {
-		this.numberofcoins = numberofcoins;
+	public void setQuantity(long quantity) {
+		this.quantity = quantity;
 	}
 
-	public long getFacevalue() {
-		return facevalue;
+	public long getValue() {
+		return value;
 	}
 
-	public void setFacevalue(long facevalue) {
-		this.facevalue = facevalue;
+	public void setValue(long value) {
+		this.value = value;
 	}
 
 	public String getName() {
@@ -63,12 +63,12 @@ public class Coin {
 		this.name = name;
 	}
 
-	public String getNameall() {
-		return nameall;
+	public String getNameplural() {
+		return nameplural;
 	}
 
-	public void setNameall(String nameall) {
-		this.nameall = nameall;
+	public void setNameplural(String nameplural) {
+		this.nameplural = nameplural;
 	}
 
 }
