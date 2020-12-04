@@ -22,10 +22,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain how you took advantage of Java's Object Oriented approach to solve the sprint challenge.
+1. Explain how you took advantage of Java's Object-Oriented approach to solve the sprint challenge.
+   - I created multiple classes to blueprint individual objects with class-level attributes and behaviors. These classes (with one interface) effectively employ abstraction via getters, setters, helper functions, and the like. Encapsulation is employed only in the Coin Model class, but that's because the Spring framework effectively takes care of the heavy lifting (hell, talk about encapsulation & abstraction——let's look at Spring!).
+  There's a little hint of Polymorphism in each endpoint in the controller with the annotation `GetMapping`. If you look at their return statement, you'll find that it returns a ResponseEntity<?>. Some of the most blatant Polymorphism you could find! That function has the ability to return a ResponseEntity containing an object of an unknown type, shape, etc. That is the essence behind Polymorphism, the ability to take many different forms.
+   - I employed SOLID principles as best I could. For Sigle-responsibilty principle, I managed each task within it's contained space (see HelperFunctions class for helper functions to allow CoinController ONLY work on managing coins). 
 2. Explain the three steps needed to run a Java application (using the JDK) including what each step does and how those step correlate to running a JavaScript application.
+    - `javac <project_name>*/.java` 
+      - Converts source code to bytecode for, code ready for execution in the JVM. This command creates an associated `.class` file for each found `.java` file—that `.class` file contains the executable bytecode. Any runtime error found will be printed to the console to notify the class and line that contains the error.   
+    - `jar cvfe <arbitrary_name_for_jar_file (chosen now)>.jar <project_name>.<ClassToCompile> <project_name>/*.class`
+      - Creates `c` a new file archive with the given name. (I had to reference notes for this one) — the `v` directs the archive file to generate verbose output. The `f` specifies the jar output file will be created, under whatever name you specify in this command. `e` sets the main class (also known as the Entry point). 
+    - `java -jar <arbitrary_name_for_jar_file (chosen above)>`
+      - `java` launches the Java Virtual Machine. `-jar` specifies that we are using a jar file (created in the step above). The final argument `<arbitrary_name>` is the name of the `.jar` file given to the `jar` command in the step above. This is how we select that specific program for execution.
 3. Explain how Java being a strongly typed language affected you solution.
-4. Can you explain the differences between Abstract Classes and Interfaces including how they are used in your application?
+   - For one it made me happier to write a solution with constraints set by me. Every little step of execution at runtime will know what data type to expect. This allows for way more errors to be thrown, which is really just preferable for a program like this... it allows me, as the dev, to say—_hey, this function needs to take in X and return Y. If it DOESN'T do that, something is wrong and I want to kill the program (or, preferably, handle the error with custom error handling, but we haven't quite made it there yet)_. 
+4. Can you explain the differences between Abstract Classes and Interfaces including how they are used in your application? 
+   - `Abstract classes` are quite a bit more fully fleshed-out than `Interfaces` in that they are fully-fledged classes. They can have `constructors`, `fields`, `abstract methods` (which allow subclasses to implement themselves), and fully-operational ready-to-go `methods`. Classes can only inherit from ONE `Abstract class`, via the `extends` keyword.
+   - `Interfaces`, on the other hand, are really just a list of methods signatures specifying the name of the method, the return type of the method, and the parameters taken in by that method. Then, whenever a class `implements` an interface or multiple interfaces, the implementation class must IMPLEMENT all the methods specified in the `Interface`.   
 
 ## Instructions
 
